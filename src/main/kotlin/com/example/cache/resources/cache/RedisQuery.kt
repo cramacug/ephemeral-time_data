@@ -1,10 +1,10 @@
 package com.example.cache.resources.cache
 
-import com.example.cache.resources.CacheOperations
+import com.example.cache.resources.QueryOperations
 import org.springframework.stereotype.Repository
 
 @Repository
-class RedisCache : CacheOperations<String, String> {
+class RedisQuery : QueryOperations<String, String> {
 
     val source: Map<String, String> = mapOf()
     val resource: MutableMap<String, String> = mutableMapOf()

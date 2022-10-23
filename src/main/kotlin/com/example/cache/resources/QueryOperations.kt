@@ -1,6 +1,6 @@
 package com.example.cache.resources
 
-interface CacheOperations<K, V> {
+interface QueryOperations<K, V> {
     fun getBy(key: K): V?
 
     fun upsert(key: K, value: V): V
@@ -8,7 +8,7 @@ interface CacheOperations<K, V> {
     fun clear(key: K)
 }
 
-abstract class CacheStrategy<K, V> : CacheOperations<K, V> {
+abstract class QueryStrategy<K, V> : QueryOperations<K, V> {
 
     override fun getBy(key: K): V? {
         val valueFromCache = getFromCache(key)
